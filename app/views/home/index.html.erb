@@ -1,0 +1,27 @@
+<div class="col-lg-10 mx-auto mt-3">
+  <div class="rows">
+    <%= render 'shared/search'%>
+  </div>
+</div>
+
+<div class="col-lg-10 mx-auto">
+  <div class="row mt-4 mb-5">
+     <% @users.each do |user| %>
+     <div class="col-lg-3 mb-3 mt-3">
+      <div class="card text-center shadow", style="min-height: 380px;">
+       <div class="card-body">
+        <%= image_tag 'dummy1.png', size: '130x120',
+                                    class: 'mb-3', 
+                                    style: "border-radius: 50%; border: 2px solid #0d6efd;" %>
+        <div class="user-info">
+          <h5><%= user.name %></h5>
+          <p class="lead"><%= user.profile_title %></p>
+          <small class="text-primary"><%= user.country %></small><br />
+          <%= link_to 'View Profile', member_path(user), class: "btn btn-primary mt-3" %>
+        </div>
+       </div> 
+      </div>
+     </div>  
+    <% end %>
+  </div>
+</div>
